@@ -1,0 +1,281 @@
+/* =========================================================================
+   UNIFIED BRAND THEME SHEET & RESPONSIVE GRID MATRIX (style.css)
+   ========================================================================= */
+:root {
+    --primary-blue: #0B5EB4; /* TARC Metallic Blue */
+    --steel-slate: #4A5A6A;   /* TARC Accent Gray */
+    --midnight-navy: #111C24; /* Background Slate Blue */
+    --light-ice: #F4F7F9;     /* Card Canvas tint */
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background-color: var(--white); color: var(--midnight-navy); line-height: 1.6; padding-top: 70px; }
+.container { width: 92%; max-width: 1200px; margin: 0 auto; }
+
+/* Fixed Top Navigation Bar */
+.main-header {
+    background-color: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; padding: 8px 0;
+}
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo img { height: 50px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; }
+.nav-links a {
+    text-decoration: none; color: var(--midnight-navy); margin-left: 25px;
+    font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease;
+}
+.nav-links a:hover { color: var(--primary-blue); }
+.nav-calc-link { color: var(--primary-blue) !important; display: flex; align-items: center; gap: 6px; }
+
+/* Reusable Interactive UI Action Buttons */
+.btn-primary {
+    background-color: var(--primary-blue); color: var(--white) !important;
+    padding: 10px 22px; border-radius: 4px; border: none; cursor: pointer;
+    font-weight: 600; font-size: 0.9rem; transition: background 0.2s ease;
+}
+.btn-primary:hover { background-color: #084687; }
+.btn-secondary {
+    border: 2px solid var(--white); color: var(--white); text-decoration: none;
+    padding: 9px 22px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;
+}
+.btn-secondary:hover { background-color: var(--white); color: var(--midnight-navy); }
+
+/* =========================================================================
+   STRICT DYNAMIC RADAR TEXT EXPANSION ENGINE (FIXED CONTEXT)
+   ========================================================================= */
+/* =========================================================================
+   STRICT RESPONSIVE HERO SECTIONS (HOMEPAGE ISOLATED)
+   ========================================================================= */
+/* The base section rules shared by BOTH homepage and industry pages */
+.hero-section {
+    background-color: #0b1116 !important;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* =========================================================================
+   HIGH-LUMINOSITY HERO SECTION (OFF-CENTERED VERTICAL SPLIT)
+   ========================================================================= */
+#home.hero-section {
+    background: radial-gradient(
+        circle at center,
+        rgba(11, 17, 22, 0.12) 0%,    
+        rgba(11, 17, 22, 0.68) 45%,   
+        rgba(11, 17, 22, 0.98) 100%   
+    ), 
+    url('tarc-logo1.png') no-repeat center 62%; /* FIXED: Offsets the logo down slightly to sit perfectly under the headlines */
+    
+    background-size: min(85vw, 620px) auto !important; 
+    box-shadow: inset 0 -80px 100px rgba(11, 94, 180, 0.08);
+    
+    height: 75vh;
+    display: flex;
+    align-items: flex-start;                    /* FIXED: Forces contents to anchor tightly to the top instead of center */
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    padding-top: 55px;                          /* Clear runway boundary right under your fixed navbar line */
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;                           /* Snaps your entire text group upward into the clear header window */
+}
+
+/* =========================================================================
+   STRICT DYNAMIC RADAR TEXT EXPANSION ENGINE (SINGLE-STREAM TIMELINE)
+   ========================================================================= */
+/* =========================================================================
+   ZERO-FLASH RADAR TEXT EXPANSION ENGINE (IRONCLAD INITIALIZATION)
+   ========================================================================= */
+.hero-content h1 {
+    font-size: 3.4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    
+    /* 1. HARD CORRECTION: Forces the text to be completely invisible on load */
+    opacity: 0;
+    
+    /* 2. Standard crisp base shadows to avoid any post-render flickering */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.95),
+                 0 0 25px rgba(11, 94, 180, 0.65), 
+                 0 0 50px rgba(0, 255, 102, 0.25);
+                 
+    /* 3. TWO INDEPENDENT TIMELINES: 
+       - tarcForwardBurst runs ONCE over 4.5s to glide out. 'forwards' preserves the final 100% visible frame state.
+       - tarcPermanentPulse loops INFINITELY matching the exact end frame properties to prevent any jump glitches. */
+    animation: tarcForwardBurst 4.5s cubic-bezier(0.1, 0.8, 0.2, 1) forwards,
+               tarcPermanentPulse 4s ease-in-out 4.5s infinite alternate;
+               
+    backface-visibility: hidden;
+    will-change: transform, letter-spacing, text-shadow, opacity;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    max-width: 720px;
+    margin: 0 auto;
+    color: #cbd5e1;
+    line-height: 1.5;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.95);
+    
+    /* Forces subtext to stay completely hidden until its staggered timer triggers */
+    opacity: 0;
+    
+    animation: tarcSubtextOnce 3.5s cubic-bezier(0.1, 0.8, 0.2, 1) 1.2s forwards;
+    backface-visibility: hidden;
+    will-change: opacity, transform;
+}
+
+/* =========================================================================
+   TIMELINE 1: THE INITIAL ONE-TIME FORWARD LAUNCH
+   ========================================================================= */
+@keyframes tarcForwardBurst {
+    0% {
+        transform: scale(0.88);
+        letter-spacing: -2px;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.02);
+        letter-spacing: 3px;
+        opacity: 1;
+    }
+}
+
+@keyframes tarcSubtextOnce {
+    0% {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =========================================================================
+   TIMELINE 2: THE INFINITE BREATHING WAVE (PERFECTLY SYNCHRONIZED)
+   ========================================================================= */
+@keyframes tarcPermanentPulse {
+    0% {
+        /* Matches your 100% launch frame EXACTLY to eliminate the midday jump glitch */
+        transform: scale(1.02);
+        letter-spacing: 3px;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.95),
+                     0 0 25px rgba(11, 94, 180, 0.65), 
+                     0 0 50px rgba(0, 255, 102, 0.25);
+    }
+    100% {
+        /* Gently expands the neon back-lighting over a slow 4-second rhythm */
+        transform: scale(1.02);
+        letter-spacing: 3px;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95),
+                     0 0 38px rgba(11, 94, 180, 0.85), 
+                     0 0 65px rgba(0, 255, 102, 0.40);
+    }
+}
+
+
+/* Catalog Search Inputs and Pills */
+.catalog-section { padding: 80px 0; background-color: var(--light-ice); text-align: center; }
+.section-title { font-size: 2.4rem; font-weight: 800; color: var(--midnight-navy); margin-bottom: 10px; letter-spacing: -0.5px; }
+.section-subtitle { color: var(--steel-slate); margin-bottom: 40px; font-size: 1.05rem; }
+
+.search-filter-container { max-width: 650px; margin: 0 auto 50px; position: relative; }
+#catalogSearch {
+    width: 100%; padding: 14px 20px 14px 50px; font-size: 1.05rem; border: 2px solid #cbd5e1;
+    border-radius: 30px; background-color: var(--white); outline: none; transition: all 0.3s ease;
+}
+#catalogSearch:focus { border-color: var(--primary-blue); box-shadow: 0 4px 20px rgba(11, 94, 180, 0.12); }
+.search-icon { position: absolute; left: 20px; top: 18px; color: var(--steel-slate); font-size: 1.1rem; }
+
+.accessory-filter-pills { margin-top: 20px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.pill-btn {
+    background-color: var(--white); border: 1px solid #cbd5e1; color: var(--midnight-navy);
+    padding: 7px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;
+}
+.pill-btn:hover { background-color: var(--primary-blue); color: var(--white); border-color: var(--primary-blue); }
+
+/* THREE-COLUMN DYNAMIC PRODUCT CATALOG GRID MATRIX */
+#api-product-feed, .grid-container { 
+    display: grid !important; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important; 
+    gap: 30px !important; 
+    width: 100%;
+}
+
+/* Individual Content Display Cards Style */
+.card {
+    background-color: var(--white); padding: 35px 25px; border-radius: 8px; text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); border-bottom: 4px solid transparent; transition: all 0.25s ease;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.card-interactive:hover { transform: translateY(-4px); border-bottom-color: var(--primary-blue); box-shadow: 0 10px 25px rgba(0,0,0,0.06); cursor: pointer; }
+.card-icon { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 20px; display: inline-block; }
+.card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--midnight-navy); }
+.card p { color: var(--steel-slate); font-size: 0.92rem; }
+
+/* Embedded Google Sheet Card Modifications */
+.api-product-card { border-top: 4px solid var(--steel-slate); position: relative; padding-top: 45px !important; border-bottom: none !important; }
+.api-product-card:hover { border-top-color: var(--primary-blue); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.product-badge { position: absolute; top: 15px; left: 25px; background: #e2e8f0; color: var(--midnight-navy); padding: 2px 8px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; border-radius: 3px; }
+.product-model { font-size: 1.3rem; margin-bottom: 2px; }
+.product-type-label { display: inline-block; font-size: 0.82rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 12px; }
+.product-target { font-size: 0.82rem; background-color: var(--light-ice); padding: 5px 10px; border-radius: 4px; margin-bottom: 12px; color: var(--midnight-navy); }
+.product-spec-list { list-style: none; text-align: left; margin-top: 8px; margin-bottom: 15px; }
+.product-spec-list li { font-size: 0.88rem; color: var(--steel-slate); margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.product-spec-list i { color: #10b981; font-size: 0.85rem; }
+
+/* Marketing Teaser Breakout Panel */
+.teaser-section {
+    background: linear-gradient(rgba(11, 94, 180, 0.95), rgba(8, 70, 135, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+    padding: 60px 0; text-align: center; color: var(--white); display: flex; justify-content: center;
+}
+.teaser-container { max-width: 750px; }
+.teaser-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+.teaser-section p { font-size: 1.05rem; margin-bottom: 25px; color: #cbd5e1; }
+
+.industries-section { padding: 80px 0; background-color: var(--white); text-align: center; }
+.main-footer { background-color: var(--midnight-navy); color: var(--white); text-align: center; padding: 25px 0; font-size: 0.85rem; opacity: 0.9; }
+
+/* Pop-up Modal Windows styles */
+.modal {
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(17, 28, 36, 0.65); align-items: center; justify-content: center;
+}
+.modal-content {
+    background-color: var(--white); padding: 35px; border-radius: 6px; width: 90%; max-width: 480px;
+    position: relative; animation: modalFadeIn 0.3s ease; color: var(--midnight-navy); text-align: left;
+}
+@keyframes modalFadeIn { from { opacity:0; transform:translateY(-15px); } to { opacity:1; transform:translateY(0); } }
+.close-btn { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; color: var(--steel-slate); }
+.close-btn:hover { color: var(--midnight-navy); }
+.modal h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; }
+form label { display: block; margin: 12px 0 4px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--steel-slate); }
+form input, form textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; outline: none; font-size: 0.95rem; }
+form input:focus, form textarea:focus { border-color: var(--primary-blue); }
+form button { width: 100%; margin-top: 20px; }

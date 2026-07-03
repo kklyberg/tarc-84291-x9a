@@ -1,0 +1,34 @@
+[
+    {
+        "id": "rad-01",
+        "brand": "Motorola Solutions",
+        "model": "MOTOTRBO R7 Capable",
+        "type": "Digital UHF/VHF Portable",
+        "features": ["AES-256 Encryption Ready", "IP68 Submersible Dust/Water", "Loud, Adaptive Audio Profile"],
+        "bestFor": "Police, Fire, EMS"
+    },
+    {
+        "id": "rad-02",
+        "brand": "Kenwood",
+        "model": "NX-1300AU Pro",
+        "type": "Analog/Digital Nexus Portable",
+        "features": ["Built-in Programmable LED", "Mil-Spec 810 C/D/E/F/G", "700mW Clear Audio Speaker"],
+        "bestFor": "Construction, Manufacturing"
+    },
+    {
+        "id": "rad-03",
+        "brand": "Hytera",
+        "model": "BD502i Compact",
+        "type": "Business Tier DMR",
+        "features": ["Ultra-Lightweight Frame", "16-Hour Battery Shift Life", "Anti-Interference Technology"],
+        "bestFor": "Education, Security, Churches"
+    },
+    {
+        "id": "rad-04",
+        "brand": "Ritron",
+        "model": "PT-Series Heavy Duty",
+        "type": "Industrial High-Power Handheld",
+        "features": ["High-Output 5-Watt Transceiver", "Reinforced Polycarbonate Shell", "Audible Battery Status Alert"],
+        "bestFor": "Airports, Heavy Industrial Plant Work"
+    }
+]

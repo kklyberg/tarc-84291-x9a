@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARC Link Sim | RF Path Loss Simulation Console</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calc-style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body style="padding-top: 96px; background-color: #0b1116;">
+
+    <!-- Professional Fixed Top Corporate Navigation Bar -->
+    <header class="main-header" style="position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); background-color: var(--white);">
+        <div style="background-color: var(--midnight-navy); color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 600; padding: 6px 0; border-bottom: 1px solid rgba(11, 94, 180, 0.3);">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                    <i class="fa-solid fa-location-dot" style="color: #00FF66; margin-right: 4px;"></i> 
+                    T.A. Radio Communication | 700 S John Rodes Blvd, Melbourne, FL 32904
+                </div>
+                <div>
+                    <a href="tel:3217254824" style="color: #00FFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                        <i class="fa-solid fa-phone-volume"></i> (321) 725-4824
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="padding: 10px 0;">
+            <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">
+                    <a href="index.html"><img src="tarc-logo.png" alt="T.A. Radio Communication Logo" style="height: 50px; width: auto; display: block;"></a>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#catalog">Product Catalog</a>
+                    <a href="index.html#industries">Industries Served</a>
+                    <a href="calculator.html" class="nav-calc-link"><i class="fa-solid fa-tower-broadcast"></i> RF Link Sim</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN TWO-COLUMN SPLIT ECOSYSTEM -->
+    <main style="max-width: 1400px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;">
+        
+        <!-- LEFT COLUMN: THE REALITY-CHECK & EXPECTATIONS CLASSROOM -->
+        <section style="background: rgba(17, 28, 36, 0.6); border: 1px solid rgba(11, 94, 180, 0.2); border-radius: 8px; padding: 35px; color: #fff; text-align: left;">
+            <span style="color: #00FF66; font-size: 0.75rem; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-graduation-cap"></i> Wireless Engineering Guide</span>
+            <h1 style="font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 20px; line-height: 1.1; letter-spacing: -0.5px;">The Truth About Two-Way Range</h1>
+            
+            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">
+                You have likely seen retail radios advertised boasting a <strong>"30 to 40-Mile Range"</strong>. In the real world, this is physically impossible. Radio waves travel in straight lines (Line-of-Sight). Because the Earth curves roughly every 3 to 5 miles, a signal transmitted from a handheld radio at ground level will shoot straight off into space rather than following the ground. 
+            </p>
+
+            <div style="background: rgba(255, 85, 85, 0.08); border-left: 4px solid #ff5555; padding: 18px; border-radius: 4px; margin-bottom: 25px;">
+                <h4 style="color: #ff7777; font-size: 0.95rem; font-weight: bold; margin-bottom: 6px;"><i class="fa-solid fa-triangle-exclamation"></i> The True Enemy: RF Clutter</h4>
+                <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0; line-height: 1.5;">
+                    Power (Wattage) does not bend around solid obstacles. Steel frames, concrete city walls, high-density pine foliage, and terrain hills aggressively soak up or bounce back radio frequencies. A 5-Watt commercial radio that punches 15 miles over open water might only travel <strong>less than 1 mile</strong> deep inside an urban commercial center.
+                </p>
+            </div>
+
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: #00FFFF; margin-bottom: 15px;"><i class="fa-solid fa-circle-info"></i> How to Use This Simulator</h3>
+            <ol style="color: #cbd5e1; font-size: 0.92rem; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; line-height: 1.5;">
+                <li><strong>Select Your Band:</strong> VHF bends around rural foliage better; UHF cuts through concrete walls; 800MHz is optimized for public safety.</li>
+                <li><strong>Set Node Heights:</strong> Physically raise your transmitter and receiver heights to watch the geometric horizon extend.</li>
+                <li><strong>Choose Environment Profile:</strong> Watch how your usable range instantly collapses the moment you switch from Open Flat Grounds to Urban Clutter.</li>
+                <li><strong>Deploy a Repeater:</strong> Check the box to simulate placing an elevated infrastructure tower between nodes to recover lost boundaries.</li>
+            </ol>
+
+            <div style="background: rgba(11, 94, 180, 0.12); border-left: 4px solid var(--primary-blue); padding: 18px; border-radius: 4px;">
+                <h4 style="color: #fff; font-size: 0.95rem; font-weight: bold; margin-bottom: 6px;"><i class="fa-solid fa-tower-broadcast"></i> T.A. Radio Pro Tip:</h4>
+                <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0; line-height: 1.5;">
+                    If your calculated link margin falls into the negative, adding more power rarely solves the issue. <strong>Elevation is King.</strong> Raising your tower or antenna placement by 20 feet is worth more than quadrupling your radio transmitter wattage. Try adjusting the height sliders on the right to see the math in action!
+                </p>
+            </div>
+        </section>
+        
+        <!-- RIGHT COLUMN: THE INTERACTIVE PHYSICS SIMULATION CONSOLE -->
+        <section id="tarcCalcHUDBox" style="background: #111c24; border: 2px solid #1a2936; border-radius: 8px; padding: 30px; color: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+            
+            <!-- Dynamic Telemetry Readout Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                <div style="background: #0b1116; padding: 12px; border-radius: 4px; text-align: center; border-bottom: 2px solid var(--primary-blue);">
+                    <div style="font-size: 0.72rem; color: var(--steel-slate); font-weight: bold; text-transform: uppercase;">TX Alt</div>
+                    <div id="telemetryTx" style="font-size: 1.15rem; font-weight: 900; color: #fff; margin-top: 3px;">5 FT</div>
+                </div>
+                <div style="background: #0b1116; padding: 12px; border-radius: 4px; text-align: center; border-bottom: 2px solid #00FF66;">
+                    <div style="font-size: 0.72rem; color: var(--steel-slate); font-weight: bold; text-transform: uppercase;">System ERP</div>
+                    <div id="telemetryERP" style="font-size: 1.15rem; font-weight: 900; color: #00FF66; margin-top: 3px;">5.0 W</div>
+                </div>
+                <div style="background: #0b1116; padding: 12px; border-radius: 4px; text-align: center; border-bottom: 2px solid #00FFFF;">
+                    <div style="font-size: 0.72rem; color: var(--steel-slate); font-weight: bold; text-transform: uppercase;">LOS Horizon</div>
+                    <div id="telemetryLOS" style="font-size: 1.15rem; font-weight: 900; color: #00FFFF; margin-top: 3px;">0.0 MILES</div>
+                </div>
+                <div style="background: #0b1116; padding: 12px; border-radius: 4px; text-align: center; border-bottom: 2px solid #ffaa00;">
+                    <div style="font-size: 0.72rem; color: var(--steel-slate); font-weight: bold; text-transform: uppercase;">Usable Range</div>
+                    <div id="telemetryRange" style="font-size: 1.15rem; font-weight: 900; color: #ffaa00; margin-top: 3px;">0.0 MILES</div>
+                </div>
+            </div>
+
+            <!-- Visual Physics Display Canvases -->
+            <div style="background: #05080a; border-radius: 6px; overflow: hidden; border: 1px solid #1a2936; margin-bottom: 25px; position: relative;">
+                <canvas id="rfSkylineCanvas" width="600" height="200" style="display: block; width: 100%; height: auto; background: #05080a;"></canvas>
+                <canvas id="rfSpectrumCanvas" width="600" height="60" style="display: block; width: 100%; height: auto; background: #020405; border-top: 1px solid #0b1116;"></canvas>
+            </div>
+
+            <!-- Interactive Hardware Configuration Input Controls -->
+            <div style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="display:block; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Radio RF Band</label>
+                        <select id="rfBand" style="width:100%; background:#0b1116; border:1px solid #1a2936; color:#fff; padding:10px; border-radius:4px; outline:none;">
+                            <option value="vhf">VHF Low-Band (154 MHz) - Rural</option>
+                            <option value="uhf" selected>UHF High-Band (460 MHz) - City</option>
+                            <option value="800">800 MHz Safety-Band (855 MHz)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Terrain Profile</label>
+                        <select id="terrainType" style="width:100%; background:#0b1116; border:1px solid #1a2936; color:#fff; padding:10px; border-radius:4px; outline:none;">
+                            <option value="open">Open Flat Plains (Line-of-Sight)</option>
+                            <option value="suburban">Suburban Residential / Light Foliage</option>
+                            <option value="foliage">Dense Forest / Heavy Canopy</option>
+                            <option value="urban">Dense Urban Grid / Concrete Walls</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">TX Mast Height: <span id="lblTxAlt" style="color:#fff;">5</span> FT</label>
+                        <input type="range" id="hudTxHeight" min="5" max="300" value="5" style="width:100%; accent-color:var(--primary-blue);">
+                    </div>
+                    <div>
+                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">RX Mast Height: <span id="lblRxAlt" style="color:#fff;">5</span> FT</label>
+                        <input type="range" id="hudRxHeight" min="5" max="300" value="5" style="width:100%; accent-color:var(--primary-blue);">
+                    </div>
+                </div>
+
+                <div>
+                    <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Transmitter Wattage Power: <span id="lblPower" style="color:#00FF66;">5</span> WATTS</label>
+                    <input type="range" id="rfPower" min="1" max="50" value="5" style="width:100%; accent-color:#00FF66;">
+                </div>
+
+                <div>
+                    <label style="display:flex; align-items:center; gap:8px; font-weight:bold; font-size:0.88rem; color:#00FFFF; cursor:pointer; margin-bottom: 5px;">
+                        <input type="checkbox" id="useRepeater" style="width:16px; height:16px; accent-color:#00FFFF;">
+                        Simulate TARC Repeater Hub Architecture Deployment
+                    </label>
+                    
+                    <div id="repeaterControlDeck" style="display:none; flex-direction:column; gap:15px; background:rgba(0,0,0,0.2); padding:15px; border-radius:4px; border:1px solid rgba(0,255,255,0.1); margin-top:10px; width:100%; box-sizing:border-box;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <label style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Tower Height: <span id="lblRepAlt" style="color:#fff;">100</span> FT</label>
+                                <input type="range" id="hudRepHeight" min="30" max="500" value="100" style="width:100%; accent-color:#00FFFF;">
+                            </div>
+                            <div>
+                                <label style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Repeater Power: <span id="lblRepPower" style="color:#00FF66;">40</span> W</label>
+                                <input type="range" id="rfRepPower" min="10" max="100" value="40" style="width:100%; accent-color:#00FF66;">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <label style="display:block; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Feedline Cable Type</label>
+                                <select id="coaxType" style="width:100%; background:#0b1116; border:1px solid #1a2936; color:#fff; padding:8px; border-radius:4px; outline:none;">
+                                    <option value="rg58">RG-58 Standard Coax (High Loss)</option>
+                                    <option value="rg213" selected>RG-213 Industrial Coax (Medium Loss)</option>
+                                    <option value="heliax">1/2" Pro Heliax Solid Copper (Low Loss)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display:block; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Tower Base Antenna Type</label>
+                                <select id="antennaType" style="width:100%; background:#0b1116; border:1px solid #1a2936; color:#fff; padding:8px; border-radius:4px; outline:none;">
+                                    <option value="unity">Unity Gain Omni Antenna (0 dBd)</option>
+                                    <option value="omni3">Premium Omni-Directional (3 dBd Gain)</option>
+                                    <option value="omni6" selected>Station High-Gain Omni (6 dBd Gain)</option>
+                                    <option value="yagi9">Directional Yagi Array (9 dBd Gain)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="tarcAdvisoryBox" style="background: rgba(5, 8, 10, 0.6); padding: 15px; border-radius: 4px; border: 1px dashed rgba(11, 94, 180, 0.4); display: none; margin-top: 5px;">
+                    <p id="tarcAdvisoryText" style="margin: 0; font-size: 0.82rem; color: #cbd5e1; line-height: 1.4;"></p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="calc-engine.js"></script>
+</body>
+</html>

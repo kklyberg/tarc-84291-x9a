@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARC Radio Products | Commercial Two-Way Radio Networks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+        <!-- Professional Fixed Top Corporate Branding Header Assembly -->
+    <header class="main-header" style="position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); background-color: var(--white);">
+        
+        <!-- NEW: High-Utility Tactical Contact Bar (Top Strip) -->
+        <div style="background-color: var(--midnight-navy); color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 600; padding: 6px 0; border-bottom: 1px solid rgba(11, 94, 180, 0.3);">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <div>
+                    <i class="fa-solid fa-location-dot" style="color: #00FF66; margin-right: 4px;"></i> 
+                    T.A. Radio Communication | 700 S John Rodes Blvd, Melbourne, FL 32904
+                </div>
+                <div>
+                    <a href="tel:3217254824" style="color: #00FFFF; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                        <i class="fa-solid fa-phone-volume"></i> (321) 725-4824
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Brand Navigation & Shopping Cart Toggle Drawer Line -->
+        <div style="padding: 10px 0;">
+            <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">
+                    <img src="tarc-logo.png" alt="T.A. Radio Communication Logo" style="height: 50px; width: auto; display: block;">
+                </div>
+                <nav class="nav-links" style="display: flex; align-items: center;">
+                    <a href="#home">Home</a>
+                    <a href="#catalog">Product Catalog</a>
+                    <a href="#industries">Industries Served</a>
+                    <a href="calculator.html" class="nav-calc-link"><i class="fa-solid fa-tower-broadcast"></i> RF Link Sim</a>
+                    <a href="#" id="cartToggleBtn" style="color: var(--primary-blue); position: relative; font-weight: bold; margin-left: 25px; text-decoration: none;">
+                        <i class="fa-solid fa-cart-shopping"></i> Shopping Cart 
+                        <span id="cartCountBadge" style="background: #ff5555; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem; position: absolute; top: -10px; right: -15px; font-weight: bold; display: none;">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container hero-content">
+            <h1>Mission-Critical Two-Way Radio Solutions</h1>
+            <p>Rugged hardware, crystal-clear digital audio, and flawless wide-area network coverage engineered to keep your workforce connected and safe. Authorized dealer for Motorola, Kenwood, Hytera, and Ritron.</p>
+            <!-- The buttons container has been deleted from here -->
+        </div>
+    </section>
+
+
+    <!-- Dynamic Inventory Filter Catalog Section -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <h2 class="section-title">Authorized Vendor Lineup</h2>
+            <p class="section-subtitle">Real-time hardware availability and technical specifications from leading wireless networks.</p>
+            
+                        <div class="search-filter-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="catalogSearch" placeholder="Search by brand, model, or spec (e.g. Motorola, UHF, Portable)...">
+                
+                <!-- EXPANDED CATEGORY FILTER DECK: Targets your spreadsheet types exactly -->
+                <div class="accessory-filter-pills" style="margin-top: 20px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+                    <button class="pill-btn" onclick="filterAccessory('All')">All Hardware</button>
+                    <button class="pill-btn" onclick="filterAccessory('Portable Radio')"><i class="fa-solid fa-walkie-talkie"></i> Portables</button>
+                    <button class="pill-btn" onclick="filterAccessory('Mobile Radio')"><i class="fa-solid fa-car-rear"></i> Mobiles</button>
+                    <button class="pill-btn" onclick="filterAccessory('Repeater Infrastructure')"><i class="fa-solid fa-tower-cell"></i> Repeaters</button>
+                    <button class="pill-btn" onclick="filterAccessory('Antennas')"><i class="fa-solid fa-tower-broadcast"></i> Antennas</button>
+                    <button class="pill-btn" onclick="filterAccessory('Batteries')"><i class="fa-solid fa-battery-full"></i> Batteries</button>
+                    <button class="pill-btn" onclick="filterAccessory('Chargers')"><i class="fa-solid fa-bolt"></i> Chargers</button>
+                    <button class="pill-btn" onclick="filterAccessory('Microphones')"><i class="fa-solid fa-microphone"></i> Microphones</button>
+                </div>
+            </div>
+
+            
+            <div id="api-product-feed" class="grid-container"></div>
+        </div>
+    </section>
+
+        <!-- Industries Grid Section -->
+    <section id="industries" class="industries-section">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-subtitle">Custom wireless network deployments engineered to bypass environmental obstructions in your sector.</p>
+            
+            <!-- START OF GRID: All 9 industry cards are safely grouped inside this opening tag -->
+            <div class="grid-container">
+                
+                <!-- 1. Education -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=education';">
+                    <i class="fa-solid fa-graduation-cap card-icon"></i>
+                    <h3>Education</h3>
+                    <p>Instant coordination for safe, efficient K-12 and university campuses without bulky equipment.</p>
+                </div>
+
+                <!-- 2. Construction -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=construction';">
+                    <i class="fa-solid fa-helmet-safety card-icon"></i>
+                    <h3>Construction</h3>
+                    <p>Mil-Spec rugged hardware built for the severe dust, noise, and rigor of extreme job sites.</p>
+                </div>
+
+                <!-- 3. Fire & Rescue -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=fire';">
+                    <i class="fa-solid fa-fire-extinguisher card-icon"></i>
+                    <h3>Fire & Rescue</h3>
+                    <p>Mission-critical reliability, intense heat resistance, and clear digital audio when life safety is on the line.</p>
+                </div>
+
+                <!-- 4. EMS -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=ems';">
+                    <i class="fa-solid fa-ambulance card-icon"></i>
+                    <h3>EMS</h3>
+                    <p>Seamless communication, vital tracking metrics, and vehicle mobile configurations from field dispatch to ER.</p>
+                </div>
+
+                <!-- 5. Police -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=police';">
+                    <i class="fa-solid fa-shield-halved card-icon"></i>
+                    <h3>Police & Law Enforcement</h3>
+                    <p>Secure, AES-256 encrypted coverage frameworks and advanced GPS telemetry tracking for public safety networks.</p>
+                </div>
+
+                <!-- 6. Airports -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=airports';">
+                    <i class="fa-solid fa-plane card-icon"></i>
+                    <h3>Airports</h3>
+                    <p>Streamlined ground control, tarmac coordination, and specialized aviation multi-channel systems.</p>
+                </div>
+
+                <!-- 7. Security -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=security';">
+                    <i class="fa-solid fa-user-shield card-icon"></i>
+                    <h3>Private Security</h3>
+                    <p>Constant vigilance via discreet surveillance audio earpieces backed by heavy-duty 18-hour battery cycles.</p>
+                </div>
+
+                <!-- 8. Churches -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=churches';">
+                    <i class="fa-solid fa-church card-icon"></i>
+                    <h3>Churches & Worship</h3>
+                    <p>Subtle, low-profile coordination for ministries, guest parking management, and medical team alerts.</p>
+                </div>
+
+                <!-- 9. Manufacturing -->
+                <div class="card card-interactive" onclick="window.location.href='industries/industry.html?sector=manufacturing';">
+                    <i class="fa-solid fa-industry card-icon"></i>
+                    <h3>Manufacturing</h3>
+                    <p>Intrinsically safe explosion-proof hardware portfolios paired with custom active localized repeater networks.</p>
+                </div>
+
+            </div> <!-- END OF GRID: Container closed safely AFTER card number 9 -->
+        </div>
+    </section>
+
+
+
+    <!-- Teaser Block for the Calculator -->
+    <section class="teaser-section">
+        <div class="container teaser-container">
+            <h2>Know Your Communication Boundaries Before You Deploy</h2>
+            <p>Will your hardware survive dense urban concrete or heavy forest canopy? Stop guessing. Run your network values through our professional, interactive Link Budget Path Engineering Simulator tool.</p>
+            <a href="calculator.html" class="btn-primary" style="text-decoration:none; display:inline-block;"><i class="fa-solid fa-crosshairs"></i> Open Interactive RF Simulator</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 TARC Radio Products. All Rights Reserved. Engineered Wireless Communication Systems.</p>
+        </div>
+    </footer>
+
+        <!-- Streamlined E-Commerce Shopping Cart Side Drawer Panel -->
+    <div id="fleetCartDrawer" style="position: fixed; top: 0; right: -360px; width: 340px; height: 100%; background: #0b1116; border-left: 2px solid #1a3322; box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 3000; transition: right 0.3s ease; box-sizing: border-box; display: flex; flex-direction: column; font-family: 'Segoe UI', sans-serif;">
+        <!-- Drawer Header -->
+        <div style="background: #05080a; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #00FF66;">
+            <h3 style="color: #00FF66; font-size: 0.95rem; font-weight: bold; letter-spacing: 1px; margin: 0;"><i class="fa-solid fa-basket-shopping"></i> YOUR SHOPPING CART</h3>
+            <span id="closeCartBtn" style="color: #4A5A6A; cursor: pointer; font-size: 1.3rem; font-weight: bold;">&times;</span>
+        </div>
+        
+        <!-- Cart Items Target Container -->
+        <div id="cartItemsList" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; color: #fff;">
+            <!-- JavaScript dynamically feeds rows here -->
+        </div>
+        
+        <!-- Drawer Bottom Actions Footer (With Volume Pricing Callout Fallback) -->
+        <div style="background: #05080a; padding: 15px; border-top: 1px solid #1a3322; display: flex; flex-direction: column; gap: 10px;">
+            <button id="checkoutFleetBtn" class="btn-primary" style="width: 100%; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Proceed to Checkout</button>
+            <a href="#contact" id="cartVolumeLink" style="display: block; text-align: center; color: #00FFFF; font-size: 0.82rem; text-decoration: none; font-weight: 600; padding: 5px 0;">
+                <i class="fa-solid fa-tags"></i> Contact Us for Volume Pricing
+            </a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
