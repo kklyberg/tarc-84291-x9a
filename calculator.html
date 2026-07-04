@@ -43,37 +43,42 @@
     <!-- MAIN TWO-COLUMN SPLIT ECOSYSTEM -->
     <main style="max-width: 1400px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;">
         
-        <!-- LEFT COLUMN: THE REALITY-CHECK & EXPECTATIONS CLASSROOM -->
-        <section style="background: rgba(17, 28, 36, 0.6); border: 1px solid rgba(11, 94, 180, 0.2); border-radius: 8px; padding: 35px; color: #fff; text-align: left;">
-            <span style="color: #00FF66; font-size: 0.75rem; font-weight: bold; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 5px;"><i class="fa-solid fa-graduation-cap"></i> Wireless Engineering Guide</span>
-            <h1 style="font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 20px; line-height: 1.1; letter-spacing: -0.5px;">The Truth About Two-Way Range</h1>
+             <!-- LEFT COLUMN: TECHNICAL WIRELESS FIELD ENGINEERING NOTEBOOK (INVERTED HIGH-CONTRAST) -->
+        <section style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 6px; padding: 35px; color: #0e1a24; text-align: left; font-family: 'Consolas', 'Courier New', monospace, sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
             
-            <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">
-                You have likely seen retail radios advertised boasting a <strong>"30 to 40-Mile Range"</strong>. In the real world, this is physically impossible. Radio waves travel in straight lines (Line-of-Sight). Because the Earth curves roughly every 3 to 5 miles, a signal transmitted from a handheld radio at ground level will shoot straight off into space rather than following the ground. 
+            <div style="border-bottom: 2px solid #0b5eb4; padding-bottom: 15px; margin-bottom: 25px;">
+                <span style="color: #0b5eb4; font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 4px;"><i class="fa-solid fa-clipboard-list"></i> FIELD MEMO // CONFIG-084</span>
+                <h1 style="font-size: 1.8rem; font-weight: 800; color: #0e1a24; margin: 0; line-height: 1.1; letter-spacing: -0.5px; font-family: inherit;">RF Link Budget & Horizon Bounds</h1>
+            </div>
+            
+            <p style="color: #475569; font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+                <strong>1.0 SURFACE CURVATURE CONSTRAINTS (LOS):</strong> Commercial two-way radio frequencies propagate via straight-line geometric paths (Line-of-Sight). Consumer marketing materials often advertise "30-mile handheld ranges," which violates basic earth geometry. Handheld nodes operating at typical ground heights (h = 5 ft) encounter a physical horizon limitation at ~3.1 miles. Transmissions extending beyond this point overshoot the curvature of the earth and dissipate into space.
             </p>
 
-            <div style="background: rgba(255, 85, 85, 0.08); border-left: 4px solid #ff5555; padding: 18px; border-radius: 4px; margin-bottom: 25px;">
-                <h4 style="color: #ff7777; font-size: 0.95rem; font-weight: bold; margin-bottom: 6px;"><i class="fa-solid fa-triangle-exclamation"></i> The True Enemy: RF Clutter</h4>
-                <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0; line-height: 1.5;">
-                    Power (Wattage) does not bend around solid obstacles. Steel frames, concrete city walls, high-density pine foliage, and terrain hills aggressively soak up or bounce back radio frequencies. A 5-Watt commercial radio that punches 15 miles over open water might only travel <strong>less than 1 mile</strong> deep inside an urban commercial center.
+            <!-- Clutter Path Attenuation Block -->
+            <div style="background: #fdf2f2; border-left: 4px solid #ff5555; padding: 15px; border-radius: 4px; margin-bottom: 25px;">
+                <h4 style="color: #b91c1c; font-size: 0.88rem; font-weight: bold; margin: 0 0 6px 0; text-transform: uppercase;"><i class="fa-solid fa-chart-line-down"></i> 1.1 Obstruction & Path Attenuation Log</h4>
+                <p style="color: #475569; font-size: 0.85rem; margin-bottom: 0; line-height: 1.5;">
+                    Linear RF power (Wattage) cannot bend around solid geographical or structural barriers. Dense pine canopy, concrete urban grids, and corrugated steel blocks act as heavy attenuation filters. A 5W transceiver achieving 10+ miles over unobstructed salt water will experience a link budget collapse to <strong>&lt; 0.8 miles</strong> inside heavy commercial concrete infrastructure.
                 </p>
             </div>
 
-            <h3 style="font-size: 1.2rem; font-weight: 800; color: #00FFFF; margin-bottom: 15px;"><i class="fa-solid fa-circle-info"></i> How to Use This Simulator</h3>
-            <ol style="color: #cbd5e1; font-size: 0.92rem; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; line-height: 1.5;">
-                <li><strong>Select Your Band:</strong> VHF bends around rural foliage better; UHF cuts through concrete walls; 800MHz is optimized for public safety.</li>
-                <li><strong>Set Node Heights:</strong> Physically raise your transmitter and receiver heights to watch the geometric horizon extend.</li>
-                <li><strong>Choose Environment Profile:</strong> Watch how your usable range instantly collapses the moment you switch from Open Flat Grounds to Urban Clutter.</li>
-                <li><strong>Deploy a Repeater:</strong> Check the box to simulate placing an elevated infrastructure tower between nodes to recover lost boundaries.</li>
+            <h3 style="font-size: 1.05rem; font-weight: bold; color: #0b5eb4; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-gears"></i> 2.0 Calculation Methodology</h3>
+            <ol style="color: #475569; font-size: 0.88rem; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 35px; line-height: 1.5;">
+                <li><strong>Band Selection:</strong> VHF provides superior knife-edge diffraction around foliage; UHF cuts through dense structural concrete walls; 800MHz is optimized for trunked public safety grids.</li>
+                <li><strong>Elevation Mapping:</strong> Adjust the TX/RX sliders to lengthen the geometric radio horizon limit via the formula: d = √(2×h1) + √(2×h2).</li>
+                <li><strong>Clutter Profile Selection:</strong> Applies the Log-Distance Path Loss exponent matrix against free-space attenuation baselines.</li>
+                <li><strong>Infrastructure Link:</strong> Toggles a middle-bridge repeater node to establish independent dual-path link calculations (Leg A + Leg B).</li>
             </ol>
 
-            <div style="background: rgba(11, 94, 180, 0.12); border-left: 4px solid var(--primary-blue); padding: 18px; border-radius: 4px;">
-                <h4 style="color: #fff; font-size: 0.95rem; font-weight: bold; margin-bottom: 6px;"><i class="fa-solid fa-tower-broadcast"></i> T.A. Radio Pro Tip:</h4>
-                <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0; line-height: 1.5;">
-                    If your calculated link margin falls into the negative, adding more power rarely solves the issue. <strong>Elevation is King.</strong> Raising your tower or antenna placement by 20 feet is worth more than quadrupling your radio transmitter wattage. Try adjusting the height sliders on the right to see the math in action!
+            <div style="background: #f0f7ff; border-left: 4px solid #0b5eb4; padding: 15px; border-radius: 4px;">
+                <h4 style="color: #0b5eb4; font-size: 0.88rem; font-weight: bold; margin: 0 0 6px 0; text-transform: uppercase;"><i class="fa-solid fa-calculator"></i> Engineering Axiom</h4>
+                <p style="color: #475569; font-size: 0.85rem; margin-bottom: 0; line-height: 1.5;">
+                    When dealing with negative link margins, increasing terminal wattage power outputs provides diminishing returns. <strong>Antenna radiation height is the primary system vector.</strong> Raising a structural mast by 20 feet recovers more decibel margin than quadrupling terminal amplifier wattage.
                 </p>
             </div>
         </section>
+
         
         <!-- RIGHT COLUMN: THE INTERACTIVE PHYSICS SIMULATION CONSOLE -->
         <section id="tarcCalcHUDBox" style="background: #111c24; border: 2px solid #1a2936; border-radius: 8px; padding: 30px; color: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
@@ -129,11 +134,11 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
-                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">TX Mast Height: <span id="lblTxAlt" style="color:#fff;">5</span> FT</label>
+                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">TX Mast Height: <span id="lblTxAlt" style="color:#00FFFF;">5</span> FT</label>
                         <input type="range" id="hudTxHeight" min="5" max="300" value="5" style="width:100%; accent-color:var(--primary-blue);">
                     </div>
                     <div>
-                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">RX Mast Height: <span id="lblRxAlt" style="color:#fff;">5</span> FT</label>
+                        <label style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">RX Mast Height: <span id="lblRxAlt" style="color:#00FFFF;">5</span> FT</label>
                         <input type="range" id="hudRxHeight" min="5" max="300" value="5" style="width:100%; accent-color:var(--primary-blue);">
                     </div>
                 </div>
@@ -152,7 +157,7 @@
                     <div id="repeaterControlDeck" style="display:none; flex-direction:column; gap:15px; background:rgba(0,0,0,0.2); padding:15px; border-radius:4px; border:1px solid rgba(0,255,255,0.1); margin-top:10px; width:100%; box-sizing:border-box;">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div>
-                                <label style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Tower Height: <span id="lblRepAlt" style="color:#fff;">100</span> FT</label>
+                                <label style="display:flex; justify-content:space-between; font-size:0.72rem; font-weight:bold; color:var(--steel-slate); text-transform:uppercase; margin-bottom:5px;">Tower Height: <span id="lblRepAlt" style="color:#00FFFF;">100</span> FT</label>
                                 <input type="range" id="hudRepHeight" min="30" max="500" value="100" style="width:100%; accent-color:#00FFFF;">
                             </div>
                             <div>
