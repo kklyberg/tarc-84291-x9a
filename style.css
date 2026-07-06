@@ -301,3 +301,9 @@ body {
     background-color: var(--electric-blue) !important;
     color: #ffffff !important;
 }
+/* =========================================================================
+   NAVBAR BRAND SHOWROOMS AUTOMATED HOVER CONTROLLER
+   ========================================================================= */
+.dropdown:hover .dropdown-content {
+    display: block !important;
+}
